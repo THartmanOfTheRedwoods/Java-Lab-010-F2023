@@ -64,4 +64,21 @@ public class WeatherStation {
         this.pressure = WeatherStation.hPaToInHG(main.get("pressure").getAsFloat());
         notifyDisplays();
     }
+    public static void main(String[] args) {
+        WeatherStation weatherStation = new WeatherStation();
+        Display currentConditions = new CurrentConditions(weatherStation);
+        Display statisticsDisplay = new StatisticsDisplay(weatherStation);
+        Display forecastDisplay = new ForecastDisplay(weatherStation);
+        weatherStation.registerDisplay(currentConditions);
+        weatherStation.registerDisplay(statisticsDisplay);
+        weatherStation.registerDisplay(forecastDisplay);
+        while (true) {
+            try {
+                weatherStation.measure();
+                Thread.sleep(5000);
+            } catch (IOException | InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
