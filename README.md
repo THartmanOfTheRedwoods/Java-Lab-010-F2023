@@ -87,6 +87,7 @@ Wolf makes sound HOWL!!!
 * Trace through the code in WeatherStation and make sure you understand what you have to work with!
 * Look at the Display.java **interface** and in your own words, write below why you think we are declaring an **interface**.
 
+* I think the reason we are declaring an interface is that the display array is going to get overridden with values in the *notifyDisplays* method. That method has an iterator in it that updates the values in the display array.
 ## Part 2 - Create 3 Classes that **Implement** Display.java
 
 ![Program Design](images/uml_model.png)
