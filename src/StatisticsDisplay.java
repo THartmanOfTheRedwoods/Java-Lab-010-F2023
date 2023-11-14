@@ -14,6 +14,5 @@ public class StatisticsDisplay {
         temperatureMin = Float.MAX_VALUE;
     }
     public void update() {
-
     }
 }
