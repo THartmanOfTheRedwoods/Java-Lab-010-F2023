@@ -1,4 +1,4 @@
-public class CurrentConditions {
+public class CurrentConditions implements Display{
     private final WeatherStation ws;
     private float temperature;
     private float humidity;
@@ -8,7 +8,7 @@ public class CurrentConditions {
 
     public CurrentConditions(WeatherStation ws) {
         this.ws = ws;
-        ws.registerDisplay((Display) this);
+        ws.registerDisplay(this);
 
     }
     public void update() {
@@ -21,6 +21,6 @@ public class CurrentConditions {
         System.out.println("Current Conditions:");
         System.out.println("Temperature: " + temperature + "°C");
         System.out.println("Humidity: " + humidity + "%");
-        System.out.println("Pressure: " + pressure + " hPa");
+        System.out.println("Pressure: " + pressure + "InHG");
     }
 }
