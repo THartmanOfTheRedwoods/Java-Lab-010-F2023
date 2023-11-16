@@ -6,19 +6,24 @@ public class StatisticsDisplay implements Display{
     private float temperatureMax;
     private float temperatureTotal;
     private int numReadings;
-    private Gson[] readings;
     public StatisticsDisplay(WeatherStation ws){
-        update();
+        this.ws = ws;
+        ws.registerDisplay(this);
 
     }
     public void update(){
-        temperatureMin = ws.measure();
+        float temperature = ws.getTemperature();
+        temperatureTotal += temperature;
+        numReadings++;
+        if (numReadings == 1 || temperature < temperatureMin) {
+            temperatureMin = temperature;
+        }
+        if (numReadings == 1 || temperature > temperatureMax) {
+            temperatureMax = temperature;
+        }
+        display();
     }
     public void display(){
         System.out.printf("Minimum Temp: %f%nMaximum Temp: %f%nAverage Temperature: %f", temperatureMin, temperatureMax, temperatureTotal);
     }
-    public Gson[] temps(){
-        float[] readings = new float[]{ws.getTemperature(), }
-    }
-
 }

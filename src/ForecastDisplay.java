@@ -4,13 +4,22 @@ public class ForecastDisplay implements Display{
     private float lastPressure;
 
     public void ForecastDisplay(WeatherStation ws){
-        this.currentPressure = currentPressure;
-        this.lastPressure = lastPressure;
+        this.ws = ws;
+        ws.registerDisplay(this);
     }
     public void update(){
-
+    lastPressure = currentPressure;
+    currentPressure = ws.getPressure();
+    display();
     }
     public void display(){
-
+        System.out.print("Forecast: ");
+        if (currentPressure > lastPressure) {
+            System.out.println("Improving weather on the way!");
+        } else if (currentPressure == lastPressure) {
+            System.out.println("More of the same");
+        } else if (currentPressure < lastPressure) {
+            System.out.println("Watch out for cooler, rainy weather");
+        }
     }
 }

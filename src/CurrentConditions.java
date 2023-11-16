@@ -4,7 +4,8 @@ public class CurrentConditions implements Display{
     private float humidity;
     private float pressure;
     public CurrentConditions(WeatherStation ws) {
-    update();
+    this.ws = ws;
+    ws.registerDisplay(this);
     }
 
     public void update(){
