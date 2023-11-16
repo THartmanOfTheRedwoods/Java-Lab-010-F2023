@@ -16,21 +16,22 @@ public class StatisticsDisplay implements Display {
     }
     public void update() {
         float temperature = ws.getTemperature();
-        tempRunningTotal += temperature;
-        numReadings++;
-
         if ( numReadings == 1 || temperature < temperatureMin) {
             temperatureMin = temperature;
         }
         if ( numReadings == 1 || temperature > temperatureMax) {
             temperatureMax = temperature;
         }
+        tempRunningTotal += temperature;
+        numReadings++;
         display();
     }
 
     public void display() {
         if (numReadings > 0) {
-            float averageTemperature = tempRunningTotal /numReadings;
+            float averageTemperature = tempRunningTotal / numReadings;
+        } else {
+            averageTemperature = temperatureMax;
         }
         System.out.println("Temperature Statistics:");
         System.out.println("Max: " + temperatureMax + "°F");
