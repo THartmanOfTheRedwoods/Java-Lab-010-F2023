@@ -50,6 +50,7 @@ public class WeatherStation {
         return pressure;
     }
 
+
     public static float hPaToInHG(float hPa) {
         return hPa * 0.029529983071445f;
     }
