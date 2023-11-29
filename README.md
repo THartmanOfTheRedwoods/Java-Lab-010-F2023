@@ -1,5 +1,5 @@
 # Java-Lab-010
-
+When methods in the abstract class are undefined are they just undefined so they can be defined later?
 ## INTRODUCTION!!!
 
 First, let me define a new **TYPE** you have not yet seen in Java, the **interface**.
@@ -86,6 +86,8 @@ Wolf makes sound HOWL!!!
 
 * Trace through the code in WeatherStation and make sure you understand what you have to work with!
 * Look at the Display.java **interface** and in your own words, write below why you think we are declaring an **interface**.
+
+We are declaring an interface so that we can have a list of different kinds of Displays which all update and display.
 
 ## Part 2 - Create 3 Classes that **Implement** Display.java
 
