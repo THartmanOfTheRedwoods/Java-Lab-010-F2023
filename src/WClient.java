@@ -17,6 +17,7 @@ public class WClient {
     public static void main(String[]args){
         while (true) {
 
+
             System.out.println(currentTime());
             WeatherStation ws = new WeatherStation();
             Display[] ds = new Display[]{
