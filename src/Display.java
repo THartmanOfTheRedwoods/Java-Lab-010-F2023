@@ -1,4 +1,5 @@
 public interface Display {
-    public void update();
-    public void display();
+    void update();
+    void display();
 }
+
