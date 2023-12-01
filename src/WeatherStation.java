@@ -64,4 +64,8 @@ public class WeatherStation {
         this.pressure = WeatherStation.hPaToInHG(main.get("pressure").getAsFloat());
         notifyDisplays();
     }
+    public static void main(String[] args) {
+
+    }
+
 }
