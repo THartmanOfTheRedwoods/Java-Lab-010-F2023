@@ -1,4 +1,11 @@
+/**
+ * @author Trevor Hartman
+ * @author MJ Fracess
+ *
+ * @since Version 1.0
+ */
 class ForecastDisplay implements Display {
+
     private WeatherStation weatherStation;
     private float currentPressure;
     private float lastPressure;

@@ -1,3 +1,9 @@
+/**
+ * @author Trevor Hartman
+ * @author MJ Fracess
+ *
+ * @since Version 1.0
+ */
 public class StatisticsDisplay implements Display {
     private WeatherStation weatherStation;
     private float temperatureMin;

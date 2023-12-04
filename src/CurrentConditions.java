@@ -1,4 +1,9 @@
-
+/**
+ * @author Trevor Hartman
+ * @author MJ Fracess
+ *
+ * @since Version 1.0
+ */
 
 public class CurrentConditions implements Display {
     private WeatherStation weatherStation;
