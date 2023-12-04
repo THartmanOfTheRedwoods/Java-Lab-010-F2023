@@ -1,3 +1,4 @@
+
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
@@ -8,6 +9,12 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Trevor Hartman
+ * @author MJ Fracess
+ *
+ * @since Version 1.0
+ */
 public class WeatherStation {
     private URL url;
     private List<Display> displays;
@@ -16,7 +23,7 @@ public class WeatherStation {
     private float humidity;
     private float pressure;
 
-    public WeatherStation() {
+    public WeatherStation() { //Constructor
         displays = new ArrayList<Display>();
         gson = new Gson();
         try {
