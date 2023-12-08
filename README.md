@@ -56,11 +56,11 @@ public class Wolf implements Canine {
 
 ...what may look new to you is **implements Canine**. This is how a **Concrete Class** informs the Java code parser, that it is choosing to **Implement** the **methods** (i.e. the behaviors) declared without method bodies in the **interface**. As you can see, both the Dog class and the Wolf class **implements Canine** meaning both classes **MUST** override and give method bodies, to **ALL** the method signatures in the **Canine interface**.
 
-What may not be obvious is that even though Wolf and Dog implement the method signatures differently, because both Wolf and Dog contain the same behaviors/methods declared in Canine, both Wolf and Dog can ALSO be treated as if they are **Canine** objects. Thus, interfaces allow programmers to treat objects that do completely different things similarly because they share the same behaviors/methods. What does this mean? Consider the main program below:
+What may not be obvious is that even though Wolf and Dog implement the method signatures differently, because both Wolf and Dog contain the same behaviors/methods declared in Canine, both Wolf and Dog can ALSO be treated as if they are **Canine** objects. Thus, interfaces allow programmers to treat objects that do completely different things similarly because they share the same behaviors/methods. What does this mean? Consider the weatherClient program below:
 
 ```java
 public class Main {
-    public static void main(String[] args) {
+    public static void weatherClient(String[] args) {
         Canine[] canines = new Canine[2];
         canines[0] = new Dog();
         canines[1] = new Wolf();
@@ -73,7 +73,7 @@ public class Main {
 ```
 
 ```bash
-# Output from main method above:
+# Output from weatherClient method above:
 Dog makes sound BARK
 Wolf makes sound HOWL!!!
 ```
