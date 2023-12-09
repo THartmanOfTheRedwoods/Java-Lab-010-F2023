@@ -17,6 +17,7 @@ public class WeatherStation {
     private float pressure;
 
     public WeatherStation() {
+
         displays = new ArrayList<Display>();
         gson = new Gson();
         try {
@@ -64,4 +65,21 @@ public class WeatherStation {
         this.pressure = WeatherStation.hPaToInHG(main.get("pressure").getAsFloat());
         notifyDisplays();
     }
+
+    public static void main (String[] args){
+        WeatherStation ws =new WeatherStation();
+        StatisticsDisplay s = new StatisticsDisplay(ws);
+        ForecastDisplay f = new ForecastDisplay(ws);
+        CurrentConditions c = new CurrentConditions(ws);
+        s.update();
+        f.update();
+        c.update();
+        s.display();
+        f.display();
+        c.display();
+
+    }
+
 }
+
+
