@@ -1,4 +1,7 @@
 public interface Display {
-    public void update();
-    public void display();
+    void update(double temperature, double humidity, double pressure);
+    void display();
+
+    void update();
 }
+
