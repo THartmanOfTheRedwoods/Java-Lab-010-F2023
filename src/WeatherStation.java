@@ -1,3 +1,11 @@
+/*
+ *
+ * @author Trevor Hartman
+ * @author Angelina Perez
+ *
+ * @version 1.0
+ *
+ */
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
@@ -63,5 +71,13 @@ public class WeatherStation {
         this.humidity = main.get("humidity").getAsFloat();
         this.pressure = WeatherStation.hPaToInHG(main.get("pressure").getAsFloat());
         notifyDisplays();
+    }
+    public static void main(String[] args) throws IOException {
+        WeatherStation weatherStation = new WeatherStation();
+        Display currentConditions = new CurrentConditions(weatherStation);
+        Display statisticsDisplay = new StatisticsDisplay(weatherStation);
+        Display forecastDisplay = new ForecastDisplay(weatherStation);
+
+        weatherStation.measure();
     }
 }
