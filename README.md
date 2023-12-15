@@ -85,7 +85,10 @@ Wolf makes sound HOWL!!!
 ## Part 1 - What do I have to Work with?
 
 * Trace through the code in WeatherStation and make sure you understand what you have to work with!
-* Look at the Display.java **interface** and in your own words, write below why you think we are declaring an **interface**.
+  * Look at the Display.java **interface** and in your own words, write below why you think we are declaring an **interface**.
+
+Ok, so each of the three classes (CurrentConditions, StatisticsDisplay, and ForecastDisplay) are observers and dependent  on the Weatherstation class. Each of the observer classes need to update and display different fields, so the Display interface standardizes the way Weatherstation will access the observers by treating all of them as Display objects. The update and displaty methods in each observer class accesses only the relevant fields from Weatherstation, but are all acessed as Display objects. Yippee!!
+
 
 ## Part 2 - Create 3 Classes that **Implement** Display.java
 
