@@ -62,6 +62,16 @@ public class WeatherStation {
         this.temperature = main.get("temp").getAsFloat();
         this.humidity = main.get("humidity").getAsFloat();
         this.pressure = WeatherStation.hPaToInHG(main.get("pressure").getAsFloat());
+        System.out.println(humidity);
         notifyDisplays();
+    }
+
+    public static void main(String[] args) {
+        WeatherStation ws = new WeatherStation();
+        try {
+            ws.measure();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
