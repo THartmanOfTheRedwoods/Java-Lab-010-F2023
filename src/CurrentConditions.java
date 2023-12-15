@@ -4,9 +4,14 @@ public class CurrentConditions implements Display{
           private float temperature;
           private float humidity;
 
+          public CurrentConditions(WeatherStation ws) {
+                    this.ws = ws;
+          }
+
           @Override
           public void update() {
-
+                    this.temperature = ws.getTemperature();
+                    this.humidity = ws.getHumidity();
           }
 
           @Override

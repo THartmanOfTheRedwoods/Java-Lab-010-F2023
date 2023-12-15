@@ -13,8 +13,11 @@ public class WeatherStation {
     private List<Display> displays;
     private Gson gson;
     private float temperature;
+    private float temperatureMin;
+    private float temperatureMax;
     private float humidity;
     private float pressure;
+
 
     public WeatherStation() {
         displays = new ArrayList<Display>();
@@ -36,10 +39,20 @@ public class WeatherStation {
         for(Display d : displays) {
             d.update();
         }
+        System.out.println();
+
     }
 
     public float getTemperature() {
         return temperature;
+    }
+
+    public float getTemperatureMin() {
+        return temperatureMin;
+    }
+
+    public float getTemperatureMax() {
+        return temperatureMax;
     }
 
     public float getHumidity() {
@@ -59,19 +72,20 @@ public class WeatherStation {
         JsonObject object = gson.fromJson(reader, JsonObject.class);
         JsonObject main = object.get("main").getAsJsonObject();
 
+
         this.temperature = main.get("temp").getAsFloat();
+        this.temperatureMin = main.get("temp_min").getAsFloat();
+        this.temperatureMax = main.get("temp_max").getAsFloat();
+
+
         this.humidity = main.get("humidity").getAsFloat();
         this.pressure = WeatherStation.hPaToInHG(main.get("pressure").getAsFloat());
-        System.out.println(humidity);
+        this.test = main.get("humidity").getAsFloat();          //scaffold
+
+
         notifyDisplays();
     }
 
-    public static void main(String[] args) {
-        WeatherStation ws = new WeatherStation();
-        try {
-            ws.measure();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+
+
 }

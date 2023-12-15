@@ -4,9 +4,13 @@ public class ForecastDisplay implements Display{
           private float currentPresure;
           private float lastPressure;
 
+          public ForecastDisplay(WeatherStation ws) {
+                    this.ws = ws;
+          }
+
           @Override
           public void update() {
-
+                    this.currentPresure = ws.getPressure();
           }
 
           @Override
