@@ -15,6 +15,6 @@ public class ForecastDisplay implements Display{
 
           @Override
           public void display() {
-
+                    System.out.println("fd");               //scaffold
           }
 }

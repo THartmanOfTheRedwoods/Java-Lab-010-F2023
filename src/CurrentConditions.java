@@ -4,6 +4,7 @@ public class CurrentConditions implements Display{
           private float temperature;
           private float humidity;
 
+
           public CurrentConditions(WeatherStation ws) {
                     this.ws = ws;
           }
@@ -16,6 +17,6 @@ public class CurrentConditions implements Display{
 
           @Override
           public void display() {
-
+                    System.out.println("cc");               //scaffold
           }
 }

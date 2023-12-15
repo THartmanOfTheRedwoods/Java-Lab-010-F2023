@@ -38,8 +38,8 @@ public class WeatherStation {
     public void notifyDisplays() {
         for(Display d : displays) {
             d.update();
+            d.display();
         }
-        System.out.println();
 
     }
 
@@ -72,16 +72,11 @@ public class WeatherStation {
         JsonObject object = gson.fromJson(reader, JsonObject.class);
         JsonObject main = object.get("main").getAsJsonObject();
 
-
         this.temperature = main.get("temp").getAsFloat();
         this.temperatureMin = main.get("temp_min").getAsFloat();
         this.temperatureMax = main.get("temp_max").getAsFloat();
-
-
         this.humidity = main.get("humidity").getAsFloat();
         this.pressure = WeatherStation.hPaToInHG(main.get("pressure").getAsFloat());
-        this.test = main.get("humidity").getAsFloat();          //scaffold
-
 
         notifyDisplays();
     }

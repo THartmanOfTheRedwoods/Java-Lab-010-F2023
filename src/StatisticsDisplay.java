@@ -20,6 +20,6 @@ public class StatisticsDisplay implements Display{
 
           @Override
           public void display() {
-
+                    System.out.println("sd");               //scaffold
           }
 }
