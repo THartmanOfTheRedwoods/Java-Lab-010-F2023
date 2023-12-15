@@ -17,6 +17,6 @@ public class CurrentConditions implements Display{
 
           @Override
           public void display() {
-                    System.out.println("cc");               //scaffold
+                    System.out.printf("CURRENT CONDITIONS: %nTemperature: %.1f F%nHumidity: %.1f in HG%n%n", temperature, humidity);
           }
 }

@@ -20,6 +20,6 @@ public class StatisticsDisplay implements Display{
 
           @Override
           public void display() {
-                    System.out.println("sd");               //scaffold
+                    System.out.printf("CONDITION DETAILS: %nHigh: %.1f F%nLow: %.1f F%nAverage %.1f%n%n", temperatureMax, temperatureMin, temperatureAvg);               //scaffold
           }
 }
